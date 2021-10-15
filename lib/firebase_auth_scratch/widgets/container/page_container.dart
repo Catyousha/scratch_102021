@@ -12,8 +12,8 @@ class PageContainer extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
+          hasScrollBody: false,
           child: Container(
-            //width: double.infinity,
             color: FlexColor.aquaBlueLightPrimary,
             padding: const EdgeInsets.all(18.0),
             child: child,

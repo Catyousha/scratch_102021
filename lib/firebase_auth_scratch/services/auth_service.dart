@@ -1,15 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:scratch_102021/firebase_auth_scratch/models/auth_response.dart';
+import '../models/auth.dart';
 
 class AuthService {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  static Future<AuthResponse> loginWithEmail(
-      {required String email, required String pass}) async {
+  static Future<AuthResponse> loginWithEmail({
+    required AuthRequest request,
+  }) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: pass,
+        email: request.email,
+        password: request.password,
       );
       return AuthResponse(
         user: result.user,
@@ -21,12 +22,13 @@ class AuthService {
     }
   }
 
-  static Future<AuthResponse> registerWithEmail(
-      {required String email, required String pass}) async {
+  static Future<AuthResponse> registerWithEmail({
+    required AuthRequest request,
+  }) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: pass,
+        email: request.email,
+        password: request.password,
       );
       return AuthResponse(
         user: result.user,

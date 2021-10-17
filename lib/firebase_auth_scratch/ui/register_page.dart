@@ -65,7 +65,7 @@ class _RegisterViewState extends State<RegisterView> {
                   margin: const EdgeInsets.all(8.0),
                   color: Colors.white,
                   child: Text(
-                    _stateWatch.message,
+                    _stateWatch.message!,
                     style: textRed,
                   ),
                 ),

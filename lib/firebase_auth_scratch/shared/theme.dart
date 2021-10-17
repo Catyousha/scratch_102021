@@ -8,6 +8,11 @@ TextStyle textWhite = GoogleFonts.nunito(
   fontSize: 15,
 );
 
+TextStyle textGreen = GoogleFonts.nunito(
+  color: FlexColor.greenLightPrimary,
+  fontSize: 15,
+);
+
 TextStyle textRed = GoogleFonts.nunito(
   color: FlexColor.redWineDarkPrimary,
   fontSize: 15,

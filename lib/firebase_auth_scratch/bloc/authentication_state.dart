@@ -2,7 +2,8 @@ part of 'authentication_bloc.dart';
 
 abstract class AuthenticationState extends Equatable {
   final AuthResponse? response;
-  const AuthenticationState(this.response);
+  final String? message;
+  const AuthenticationState(this.response, {this.message});
 
   @override
   List<Object?> get props => [response];
@@ -17,7 +18,10 @@ class AuthenticationLoggedIn extends AuthenticationState {
 }
 
 class AuthenticationSuccess extends AuthenticationState {
-  const AuthenticationSuccess(AuthResponse response) : super(response);
+  const AuthenticationSuccess(String message) : super(null, message: message);
+
+  @override
+  List<Object?> get props => [message];
 }
 
 class AuthenticationLoading extends AuthenticationState {
@@ -25,9 +29,5 @@ class AuthenticationLoading extends AuthenticationState {
 }
 
 class AuthenticationError extends AuthenticationState {
-  final String message;
-  const AuthenticationError(this.message) : super(null);
-
-  @override
-  List<Object?> get props => [message];
+  const AuthenticationError(String message) : super(null, message: message);
 }

@@ -6,17 +6,19 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     Key? key,
     this.onPressed,
+    this.primary = FlexColor.darkSurface,
     this.child,
   }) : super(key: key);
 
   final void Function()? onPressed;
+  final Color primary;
   final Widget? child;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.maxFinite, 0),
-        primary: FlexColor.darkSurface,
+        primary: primary,
         padding: const EdgeInsets.all(20.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),

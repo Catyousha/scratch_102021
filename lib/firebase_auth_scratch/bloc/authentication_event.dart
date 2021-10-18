@@ -42,3 +42,10 @@ class AuthenticationRegister extends AuthenticationEvent {
   @override
   List<Object?> get props => [email, password, confirmPass];
 }
+
+class AuthenticationGoogleSignIn extends AuthenticationEvent {
+  const AuthenticationGoogleSignIn() : super(null);
+
+  @override
+  List<Object?> get props => [];
+}

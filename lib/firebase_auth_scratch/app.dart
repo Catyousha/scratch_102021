@@ -17,7 +17,7 @@ class FirebaseScratchApp extends StatelessWidget {
       child: const MaterialApp(
         title: 'Firebase Auth Scratch App',
         debugShowCheckedModeBanner: false,
-        initialRoute: '/home',
+        initialRoute: '/login',
         onGenerateRoute: RouteManagement.generateRoute,
       ),
     );

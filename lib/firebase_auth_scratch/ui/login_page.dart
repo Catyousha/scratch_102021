@@ -1,3 +1,4 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/authentication_bloc.dart';
@@ -90,7 +91,7 @@ class _LoginViewState extends State<LoginView> {
                         strokeWidth: 4.0,
                         color: Colors.white,
                       )
-                    : Text("Register", style: textWhite),
+                    : Text("Login", style: textWhite),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
@@ -101,6 +102,23 @@ class _LoginViewState extends State<LoginView> {
                   }
                 },
               ),
+              Container(
+                height: 2.0,
+                width: double.infinity,
+                color: Colors.white,
+                margin: const EdgeInsets.all(24.0),
+              ),
+              Center(
+                child: Text("OR", style: textWhite),
+              ),
+              PrimaryButton(
+                  child: Text("Login with Google", style: textBlack),
+                  primary: FlexColor.lightSurface,
+                  onPressed: () {
+                    context
+                        .read<AuthenticationBloc>()
+                        .add(const AuthenticationGoogleSignIn());
+                  }),
               Container(
                 height: 2.0,
                 width: double.infinity,

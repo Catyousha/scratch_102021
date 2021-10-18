@@ -14,6 +14,7 @@ class AuthenticationBloc
         ) {
     on<AuthenticationLogin>(_onLogin);
     on<AuthenticationRegister>(_onRegister);
+    on<AuthenticationGoogleSignIn>(_onGoogleSignin);
   }
 
   Future<void> _onLogin(
@@ -45,5 +46,16 @@ class AuthenticationBloc
         ? emit(AuthenticationError(response.message ?? 'Unknown Error'))
         : emit(const AuthenticationSuccess(
             "Registrasi berhasil, silahkan login."));
+  }
+
+  Future<void> _onGoogleSignin(
+    AuthenticationGoogleSignIn event,
+    Emitter<AuthenticationState> emit,
+  ) async {
+    emit(const AuthenticationLoading());
+    AuthResponse response = await AuthService.authWithGoogle();
+    (response.user == null)
+        ? emit(AuthenticationError(response.message ?? 'Unknown Error'))
+        : emit(AuthenticationLoggedIn(response));
   }
 }

@@ -12,23 +12,25 @@ class StartupState extends Equatable {
   List<Object?> get props => [data, message];
 }
 
-class StartupInitial extends StartupState{
+class StartupInitial extends StartupState {
   const StartupInitial();
 }
 
 class StartupFetchLoading extends StartupState {
-  const StartupFetchLoading();
+  const StartupFetchLoading(
+    List<Startup>? data,
+  ) : super(data: data);
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [data];
 }
 
 class StartupFetchLoaded extends StartupState {
   const StartupFetchLoaded(
-    List<Startup> data,
+    List<Startup>? data,
   ) : super(
           data: data,
-          message: "${data.length} data has been loaded.",
+          message: "${data?.length ?? 0} data has been loaded.",
         );
 
   @override

@@ -8,7 +8,7 @@ class StartupFetchingAllData extends StartupEvent {
   StartupFetchingAllData();
 }
 
-class StartupAddingData {
+class StartupAddingData extends StartupEvent {
   Startup startup;
   StartupAddingData(this.startup);
 }

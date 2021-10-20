@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:scratch_102021/firebase_auth_scratch/error_app.dart';
+import 'firebase_auth_scratch/error_app.dart';
 import 'firebase_auth_scratch/app.dart';
 
 Future<void> main() async {

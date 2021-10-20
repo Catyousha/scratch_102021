@@ -41,6 +41,8 @@ dependencies:
   equatable: ^2.0.3
   flutter_bloc: ^7.3.1
   google_sign_in: ^5.1.1
+  cloud_firestore: ^2.5.3
+  faker: ^2.0.0
 
 dev_dependencies:
   flutter_test:

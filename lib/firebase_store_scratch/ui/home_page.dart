@@ -46,6 +46,31 @@ class _HomeViewState extends State<HomeView> {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(_stateWatch.data![index].name!),
+                subtitle: Text('${_stateWatch.data![index].id}'),
+                trailing: Wrap(
+                  children: <Widget>[
+                    IconButton(
+                      splashRadius: 5.0,
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          '/detail',
+                          arguments: _stateWatch.data![index],
+                        );
+                      },
+                      icon: const Icon(Icons.details),
+                    ),
+                    IconButton(
+                      splashRadius: 5.0,
+                      onPressed: () {
+                        context
+                            .read<StartupBloc>()
+                            .add(StartupDeleteData(_stateWatch.data![index]));
+                      },
+                      icon: const Icon(Icons.delete),
+                    ),
+                  ],
+                ),
               );
             },
           ),
@@ -58,7 +83,10 @@ class _HomeViewState extends State<HomeView> {
                       Startup(
                         name: Faker().company.name(),
                         founderName: Faker().person.name(),
-                        dateFounded: Faker().date.dateTime(),
+                        dateFounded: Faker().date.dateTime(
+                              minYear: 2010,
+                              maxYear: 2021,
+                            ),
                       ),
                     ),
                   );

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'ui/detail_page.dart';
 import 'ui/home_page.dart';
 
 import 'bloc/startup_bloc.dart';
 
 class FirebaseStoreScratch extends StatelessWidget {
-  const FirebaseStoreScratch({ Key? key }) : super(key: key);
+  const FirebaseStoreScratch({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class FirebaseStoreScratch extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (_) => const HomePage(),
+          '/detail': (_) => const DetailPage(),
         },
       ),
     );

@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.scratch_102021">
    <application
+        android:usesCleartextTraffic="true"
         android:label="scratch_102021"
         android:icon="@mipmap/ic_launcher">
         <activity

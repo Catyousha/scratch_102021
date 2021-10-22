@@ -1,7 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:scratch_102021/firebase_store_scratch/models/service_response.dart';
+import '../models/service_response.dart';
 import '../services/startup_services.dart';
 import '../models/startup.dart';
 part 'startup_event.dart';

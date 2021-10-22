@@ -6,10 +6,9 @@ import 'firebase_auth_scratch/app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  try {
-    await Firebase.initializeApp();
+  await Firebase.initializeApp().then((value) {
     runApp(const FirebaseStoreScratch());
-  } catch (_) {
+  }).catchError((_) {
     runApp(const ErrorApp());
-  }
+  });
 }

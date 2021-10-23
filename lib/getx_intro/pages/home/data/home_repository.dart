@@ -8,6 +8,7 @@ class HomeRepository implements IHomeRepository {
   HomeRepository({required this.provider});
   
   // pelaku fetching
+  // digunakan base abstract classnya, bukan varian tunggal
   final IHomeProvider provider;
 
   // keluaran berupa CasesModel / data tunggal

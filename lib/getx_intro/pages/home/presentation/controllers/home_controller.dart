@@ -5,7 +5,6 @@ import '../../domain/entity/cases_model.dart';
 class HomeController extends SuperController<CasesModel> {
   HomeController({required this.homeRepository});
   final IHomeRepository homeRepository;
-
   @override
   void onInit() {
     super.onInit();
@@ -83,3 +82,5 @@ class HomeController extends SuperController<CasesModel> {
     print('onResumed called');
   }
 }
+
+
